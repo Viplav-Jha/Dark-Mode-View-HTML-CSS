@@ -1,0 +1,40 @@
+body {
+    background: rgba(2, 0, 0, 0.849);
+    color: rgb(236, 165, 31);
+  }
+  input[type="checkbox"] {
+    font-size:50px;
+    appearance:none;
+    z-index:100;
+    position: absolute;
+    cursor:pointer;
+    top: 25px; 
+    right: 50px;
+  }
+  
+  input[type="checkbox"]::after {
+    position: absolute;
+    top: 0px; 
+    right: 0px;
+    content: '🌙';
+  }
+  input[type="checkbox"]:checked::after {
+    content: '☀️';
+  }
+  
+  .dark-mode {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 3s ease-in-out;
+    background: white;
+    opacity:0;
+     mix-blend-mode: difference; 
+  }
+  
+  input[type=checkbox]:checked ~ div {
+    opacity: 1;
+  }
+  
